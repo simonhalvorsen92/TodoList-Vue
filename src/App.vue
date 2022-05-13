@@ -1,21 +1,31 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
+  <Alltodos></Alltodos>
 </template>
 
 <script lang="ts">
 import { Options, Vue } from "vue-class-component";
-import HelloWorld from "./components/HelloWorld.vue";
+import Alltodos from "./components/Alltodos.vue";
 
 @Options({
   components: {
-    HelloWorld,
+    Alltodos,
   },
 })
 export default class App extends Vue {}
 </script>
 
 <style lang="scss">
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.theTodoItems {
+  background-color: aqua;
+}
+.header {
+  background-color: aquamarine;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
