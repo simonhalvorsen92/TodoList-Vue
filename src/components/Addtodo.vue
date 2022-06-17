@@ -1,24 +1,28 @@
 <template>
-  <div>
+  <div class="test2">
     <form @submit.prevent="onSubmit">
-      <h3><label>Add your product :</label></h3>
-      <input
-        type="text"
-        placeholder="Titel"
-        v-model="itemTitle"
-        @keypress.enter="handleClick"
-      />
-      <input
-        type="number"
-        placeholder="Date"
-        v-model="itemNumber"
-        @keypress.enter="handleClick"
-      />
+      <label
+        >Produkt:
+        <input
+          type="text"
+          placeholder="Produkt"
+          v-model="itemTitle"
+          @keypress.enter="handleClick"
+      /></label>
+
+      <label
+        >Antal:<input
+          class="number"
+          type="number"
+          placeholder="Antal"
+          v-model="itemNumber"
+          @keypress.enter="handleClick"
+        />
+        <button type="submit" v-bind="itemTitle" @click="handleClick">
+          Lägg till din Produkt
+        </button></label
+      >
     </form>
-    <br />
-    <button type="submit" v-bind="itemTitle" @click="handleClick">
-      Add Your Todo
-    </button>
   </div>
 </template>
 <script lang="ts">
@@ -47,3 +51,23 @@ export default class Addtodo extends Vue {
   }
 }
 </script>
+<style lang="scss">
+.test2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  gap: 5%;
+  background-color: rgb(193, 123, 123);
+  padding: 20px;
+}
+form {
+  display: flex;
+
+  gap: 5px;
+  height: 25px;
+  .number {
+    width: 30px;
+  }
+}
+</style>

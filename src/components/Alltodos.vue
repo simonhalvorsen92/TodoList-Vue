@@ -1,8 +1,5 @@
 <template>
-  <Addtodo
-    class="header"
-    @addItemTitle="handleAddedItemTitle($event)"
-  ></Addtodo>
+  <Addtodo @addItemTitle="handleAddedItemTitle($event)"></Addtodo>
   <SingleTodo
     @markAsDelete="handleMarkAsDelete($event)"
     @markAsDone="handleMarkAsDone($event)"
@@ -47,6 +44,8 @@ export default class AllTodos extends Vue {
     item3.id = 3;
 
     this.threeItems.push(item3);
+
+    console.log(this.threeItems);
   }
 
   markAsDelete: any;
@@ -60,6 +59,7 @@ export default class AllTodos extends Vue {
 
     if (todo) {
       todo.done = !todo.done;
+      console.log(todo);
     }
 
     console.log(todo);
